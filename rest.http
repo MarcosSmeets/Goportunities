@@ -2,15 +2,31 @@ GET http://localhost:8080/api/v1/openings
 
 ###
 POST http://localhost:8080/api/v1/openings
+Content-Type: application/json
+
 {
-    "role": "Test"
+    "role": "Test",
+    "company": "SoTesta",
+    "location": "Brasil",
+    "remote": true,
+    "link": "test.com/vagas",
 }
 
 ###
-DELETE http://localhost:8080/api/v1/openings
+DELETE http://localhost:8080/api/v1/openings?id=2
 
 ###
-PUT http://localhost:8080/api/v1/openings
+PUT http://localhost:8080/api/v1/openings?id=2
+Content-Type: application/json
+
+{
+  "role": "Test",
+  "company": "SoTesta",
+  "location": "Brasil",
+  "remote": true,
+  "link": "test.com/vagas",
+  "salary": 1200
+}
 
 ###
-GET http://localhost:8080/api/v1/opening
+GET http://localhost:8080/api/v1/opening?id=4
