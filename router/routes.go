@@ -1,17 +1,17 @@
 package router
 
 import (
-	"github.com/MarcosSmeets/Goportunities/handler"
+	openings "github.com/MarcosSmeets/Goportunities/handler/openings"
 	"github.com/gin-gonic/gin"
 )
 
 func initializeRoutes(router *gin.Engine) {
 	v1 := router.Group("/api/v1")
 	{
-		v1.GET("/openings", handler.GetListOpeningHandler)
-		v1.POST("/openings", handler.CreateOpeningHandler)
-		v1.DELETE("/openings", handler.DeleteOpeningHandler)
-		v1.PUT("/openings", handler.UpdateOpeningHandler)
-		v1.GET("/opening", handler.GetOpeningHandler)
+		v1.GET("/openings", openings.GetListOpeningHandler)
+		v1.POST("/openings", openings.CreateOpeningHandler)
+		v1.DELETE("/openings", openings.DeleteOpeningHandler)
+		v1.PUT("/openings", openings.UpdateOpeningHandler)
+		v1.GET("/opening", openings.GetOpeningHandler)
 	}
 }
